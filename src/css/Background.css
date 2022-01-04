@@ -1,0 +1,23 @@
+.background-img {
+  position: absolute;
+  z-index: -3;
+  width: 100%;
+  top: 40px;
+}
+.background-bar {
+  background-color: #2e3541;
+  width: 120%;
+  height: 100%;
+  z-index: -2;
+  position: absolute;
+  top: 18rem;
+  transform: rotatez(-5deg);
+}
+
+@media (max-width: 500px) {
+  .background-img {
+    position: absolute;
+    /* z-index: 1; */
+    width: 500px;
+  }
+}

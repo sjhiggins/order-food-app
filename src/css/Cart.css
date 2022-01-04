@@ -1,0 +1,31 @@
+.cart-container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-color: #903749;
+  width: 13rem;
+  height: 3rem;
+  border-radius: 20px;
+  justify-content: center;
+  flex-flow: wrap;
+}
+.cart-icon {
+  display: flex;
+  justify-content: center;
+  padding-right: 10px;
+}
+.cart-text {
+  display: flex;
+  padding-right: 10px;
+}
+.cart-number-container {
+  display: flex;
+  justify-content: center;
+  border-radius: 20px;
+  width: 2rem;
+  height: 1.5rem;
+  background-color: #df5d5d;
+}
+.cart-number {
+  display: flex;
+}

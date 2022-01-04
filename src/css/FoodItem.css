@@ -1,0 +1,49 @@
+/* // -------------------------------Container global */
+
+.fi-container {
+  margin: 10px 0px;
+  padding: 3px 5px;
+}
+.fi-subcontainer {
+  display: flex;
+  justify-content: space-between;
+}
+.fi-food {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+.fi-counter {
+  display: flex;
+  /* background-color: rgba(0, 0, 255, 0.096); */
+  margin-top: 8px;
+  width: 9rem;
+  height: 6rem;
+}
+
+/* // ----------------------------------- individual parts */
+.fi-content {
+  margin: 2px 0;
+}
+.food {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.description {
+  font-size: 1rem;
+}
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #e84545;
+}
+/* //--------------------------------------Underline */
+.UNDERLINE-DIV {
+  margin-top: 7px;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(95, 95, 95, 0.479);
+  height: 1px;
+  box-shadow: 0 0 1px rgba(83, 83, 83, 0.164);
+  width: 100%;
+}

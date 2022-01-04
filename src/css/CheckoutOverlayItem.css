@@ -1,0 +1,90 @@
+.ol-item-container {
+  /* background-color: rgba(137, 43, 226, 0.192); */
+  margin: 10px 0px;
+  padding: 3px 5px;
+}
+.ol-item-container_inner {
+  /* background-color: rgba(43, 226, 73, 0.171); */
+  width: 70%;
+}
+
+.ol-item-name {
+  /* background-color: rgba(43, 205, 226, 0.11); */
+  width: 70%;
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding: 3px 3px 3px 0;
+}
+
+.ol-item-price {
+  /* background-color: rgba(78, 64, 51, 0.096); */
+  width: 4rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #e84545;
+  padding: 3px 3px 3px 0;
+}
+.ol-item-flexdirection {
+  display: flex;
+  justify-content: space-between;
+}
+.ol-item-button-container {
+  /* background-color: rgba(36, 179, 172, 0.116); */
+  width: 40%;
+  padding: 0.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+.ol-item-button {
+  /* background-color: rgba(170, 156, 30, 0.178); */
+  width: 3.5rem;
+  height: 2rem;
+  margin: 0 0.5rem;
+  border: solid;
+  border-width: 1px;
+  /* border-color: rgba(0, 0, 0, 0.596); */
+  border-color: #e84545;
+  text-align: center;
+  border-radius: 6px;
+  box-shadow: 0 0 2px rgba(83, 83, 83, 0.164);
+  color: #e84545;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.ol-item-input {
+  width: 2.5rem;
+  text-align: center;
+  font-weight: 500;
+  height: 1.6rem;
+  margin: 0 0.2rem;
+  border-width: 1px;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.274);
+}
+.container-price-amount {
+  display: flex;
+}
+/* //--------------------------------------Underline */
+.ol-item-UNDERLINE-DIV {
+  margin-top: 7px;
+  display: flex;
+  justify-content: center;
+  /* background-color: rgba(73, 73, 73, 0.89); */
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 0, 0.253),
+    red,
+    rgba(255, 0, 0, 0.253)
+  );
+  height: 1px;
+  /* box-shadow: 0 0 6px rgba(255, 0, 0, 0.349); */
+  width: 100%;
+}
+
+.ol-item-button:hover {
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: bold;
+  background-color: #e84545;
+}
