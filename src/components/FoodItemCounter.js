@@ -12,7 +12,13 @@ const FoodItemCounter = (props) => {
 
   // -------- changeAmountHandler grabs value and creates or modifies array entry (checkoutCart) based on id
   const changeAmountHandler = (event) => {
-    setCheckoutCart((prevCheckout) => ( {...prevCheckout, 
+    +event.target.value === 0 ? 
+    setCheckoutCart(prevCheckout => {
+      delete prevCheckout[props.id]
+      return{...prevCheckout}}) 
+      :
+    setCheckoutCart(prevCheckout => {
+      return {...prevCheckout, 
       [props.id]: {
       id: +props.id,
       amount: +event.target.value,
@@ -20,7 +26,7 @@ const FoodItemCounter = (props) => {
       name: props.name
       }
      }
-    )
+    }
    )
   };
 
