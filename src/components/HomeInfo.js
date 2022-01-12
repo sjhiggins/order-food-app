@@ -1,7 +1,7 @@
 import React from "react";
 import "../css/HomeBanner.css";
 
-const HomeBanner = () => {
+const HomeInfo = () => {
   return (
     <div className="banner-container">
       <div className="banner-main">
@@ -19,4 +19,4 @@ const HomeBanner = () => {
   );
 };
 
-export default HomeBanner;
+export default HomeInfo;

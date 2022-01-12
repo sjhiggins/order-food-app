@@ -1,29 +1,24 @@
-import React, { useContext, useEffect, useState } from "react";
+import React,{useContext}from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { CheckoutContext } from "./context/CheckoutContext";
 import "../css/Cart.css";
 
 const Cart = () => {
-  const [checkoutCart] = useContext(CheckoutContext);
-  const [sumItems, setSumItems] = useState(0);
+  const cartCtx = useContext(CheckoutContext);
+ const checkoutCart  = Object.values(cartCtx.checkoutCart)
 
-  useEffect(() => {
-    // Adding up the number of items
+//  function to add up amounts in the array
+ const addFunction = (cart) => {
 
-    if (checkoutCart === "") {
-      return;
-    } else {
-      const itemAmounts = checkoutCart.map((e) => {
-        return Number(e.amount);
-      });
-      let sum = 0;
-      for (let i = 0; i < itemAmounts.length; i++) {
-        sum += itemAmounts[i];
-      }
-      // console.log(itemAmounts);
-      setSumItems(sum);
-    }
-  }, [checkoutCart]);
+   let numberOfItems = 0
+
+   for(let i=0 ; i<cart.length; i++){
+     numberOfItems = numberOfItems + cart[i].amount
+   }
+  return numberOfItems
+ }
+
+  let numberOfItems = addFunction(checkoutCart)
 
   return (
     <div className="cart-container">
@@ -35,7 +30,7 @@ const Cart = () => {
       </div>
       <div className="cart-number-container">
         <div className="cart-number">
-          <h4>{sumItems}</h4>
+          <h4>{numberOfItems}</h4>
         </div>
       </div>
     </div>

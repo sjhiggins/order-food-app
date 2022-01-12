@@ -1,24 +1,13 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import CheckoutOverlayItem from "./CheckoutOverlayItem";
 import "../css/CheckoutOverlay.css";
 import { CheckoutContext } from "./context/CheckoutContext";
 import CheckoutFooter from "./CheckoutFooter";
 
 const CheckoutOverlay = (props) => {
-  const [, , , setIsCartClicked] = useContext(CheckoutContext);
-  const [totalAmount, setTotalAmount] = useState(0);
-  const updatedCheckout = props.updatedCheckout;
-
-  //   calculates total sum by doing sum of all the object.amount * object.price
-  useEffect(() => {
-    let total = 0;
-    for (let i = 0; i < updatedCheckout.length; i++) {
-      total += updatedCheckout[i].amount * updatedCheckout[i].price;
-    }
-    setTotalAmount(total);
-  }, [updatedCheckout]);
-
-  console.log(totalAmount);
+  const cartCtx = useContext(CheckoutContext);
+  const setIsCartClicked = cartCtx.setIsCartClicked
+  const checkoutCartArray = Object.values(props.checkoutCart)
 
   const clickHandle = () => {
     console.log("clicked");
@@ -28,26 +17,26 @@ const CheckoutOverlay = (props) => {
   return (
     <div className="ol-container_outer">
       <div className="ol-container ">
-        <div>
-          {updatedCheckout === 0
-            ? null
-            : updatedCheckout.map((object) => {
+        <div className="ol-container-scroll">
+          {checkoutCartArray.length === 0
+            ? 
+            <div><h3>Please Add To Your Order</h3></div>
+            : 
+            checkoutCartArray.map((object) => {
                 return (
-                  <CheckoutOverlayItem
+                  object === 0 ? null : <CheckoutOverlayItem
                     name={object.name}
                     id={object.id}
                     amount={object.amount}
                     price={object.price}
                     key={object.id}
-                    buttonClickAdd={props.buttonClickAdd}
-                    buttonClickMinus={props.buttonClickMinus}
                   />
                 );
               })}
+
         </div>
         <CheckoutFooter
-          updatedCheckout={updatedCheckout}
-          totalAmount={totalAmount}
+          checkoutCartArray={checkoutCartArray}
         />
       </div>
       <div className="ol-container_clickable" onClick={clickHandle}></div>

@@ -4,15 +4,16 @@ import foodArray from "../content/foodArray";
 
 import "../css/FoodList.css";
 
-const FoodList = () => {
+const FoodList = (props) => {
   //-------------------------------------------function to map the individual food items
   const foodMapFunction = (object) => {
     return (
       <FoodItem
+      checkoutCart={props.checkoutCart}
         name={object.name}
         description={object.description}
         price={object.price}
-        key={object.id}
+        key={object.key}
         id={object.id}
       />
     );

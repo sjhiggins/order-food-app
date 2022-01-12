@@ -4,7 +4,8 @@ import { CheckoutContext } from "./context/CheckoutContext";
 import "../css/Header.css";
 
 const Header = () => {
-  const [, , , setIsCartClicked] = useContext(CheckoutContext);
+  const cartCtx = useContext(CheckoutContext);
+  const setIsCartClicked = cartCtx.setIsCartClicked
 
   const cartClickHandler = () => {
     setIsCartClicked(true);

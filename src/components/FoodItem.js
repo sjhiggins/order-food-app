@@ -3,7 +3,6 @@ import FoodItemCounter from "./FoodItemCounter";
 import "../css/FoodItem.css";
 
 const FoodItem = (props) => {
-  // --------------------------------- Logic for cart metrics is in FoodItemCounter component
   return (
     <div className="fi-container">
       <div className="fi-subcontainer">
@@ -19,6 +18,7 @@ const FoodItem = (props) => {
             name={props.name}
             id={props.id}
             price={props.price}
+            checkoutCart={props.checkoutCart}
           />
         </div>
       </div>
