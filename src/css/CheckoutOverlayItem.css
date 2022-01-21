@@ -50,6 +50,7 @@
   color: #e84545;
   font-size: 1.5rem;
   font-weight: 500;
+  transition: all 0.2s ease-out;
 }
 .ol-item-input {
   width: 2.5rem;
@@ -87,4 +88,5 @@
   color: #ffffff;
   font-weight: bold;
   background-color: #e84545;
+  transition: all 0.2s ease-out;
 }

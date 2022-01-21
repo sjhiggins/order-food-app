@@ -30,9 +30,12 @@
   display: flex;
   justify-content: space-between;
   list-style: none;
+  /* padding-top: 2rem; */
+  /* height: 17rem; */
 }
 .header-navlink {
   padding-right: 1rem;
+  transition: all 0.2s ease-out;
 }
 
 .burger {
@@ -50,6 +53,8 @@
 }
 .header-navlink:hover {
   cursor: pointer;
+  color: rgb(223, 223, 223);
+  transition: all 0.2s ease-out;
 }
 .header-cart:hover {
   cursor: pointer;
@@ -62,6 +67,9 @@
   .burger {
     display: block;
   }
+  .header-container {
+    justify-content: flex-start;
+  }
   .header-nav {
     position: absolute;
     display: flex;
@@ -73,8 +81,16 @@
     top: 5rem;
     height: 100vh;
     background-color: #e84545;
+    transform: translateX(-100%);
+    /* transition: 0.2s ease-out; */
   }
-
+  .header-cart {
+    position: absolute;
+    right: 3%;
+  }
+  .header-logo {
+    margin-left: 15px;
+  }
   .header-navlinks {
     margin: 1rem 0;
     display: flex;
@@ -82,5 +98,28 @@
   }
   .header-navlink {
     margin: 4rem 0;
+  }
+  .nav-active {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 10rem;
+    padding: 0 0;
+    left: 0px;
+    top: 5rem;
+    height: 100vh;
+    background-color: #e84545;
+    transform: translateX(0%);
+    transition: 0.2s ease-out;
+  }
+  .header-navlinks {
+    padding-top: 2rem; 
+    height: 17rem;
+}
+}
+@media screen and (max-width: 500px) {
+  .header-logo {
+ font-size: 14px;
   }
 }

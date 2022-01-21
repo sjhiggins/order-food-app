@@ -20,7 +20,7 @@ const CheckoutOverlay = (props) => {
         <div className="ol-container-scroll">
           {checkoutCartArray.length === 0
             ? 
-            <div><h3>Please Add To Your Order</h3></div>
+            <div className="add-order"><h3>Please Add To Your Order!</h3></div>
             : 
             checkoutCartArray.map((object) => {
                 return (

@@ -35,6 +35,7 @@
   color: #e84545;
   font-size: 1.3rem;
   font-weight: 500;
+  transition: all 0.2s ease-out;
 }
 .footer-button.order {
   background-color: #e84545;
@@ -45,6 +46,7 @@
 .footer-button:hover {
   background-color: #883131;
   border-color: #883131;
+  transition: all 0.2s ease-out;
   color: white;
   font-weight: 500;
   cursor: pointer;

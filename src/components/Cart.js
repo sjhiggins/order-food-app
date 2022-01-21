@@ -23,7 +23,7 @@ const Cart = () => {
   return (
     <div className="cart-container">
       <div className="cart-icon">
-        <FaShoppingCart size="1.4rem" />
+        <FaShoppingCart size="1.4em" />
       </div>
       <div className="cart-text">
         <h4>Your Cart</h4>

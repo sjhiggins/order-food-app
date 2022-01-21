@@ -1,6 +1,7 @@
 .banner-container {
   display: flex;
   justify-content: center;
+  
   /* background-color: blue; */
   height: 100%;
   width: 100%;
@@ -9,12 +10,13 @@
 .banner-main {
   width: 600px;
   background-color: #903749;
-  margin: 150px 35px;
+  margin: 150px 70px;
   z-index: -1;
   padding: 1rem 1rem;
   border-radius: 15px;
   box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.603);
   text-align: center;
+  min-width: 20rem;
 }
 .banner-main h3 {
   font-weight: bold;

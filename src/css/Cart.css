@@ -8,6 +8,7 @@
   border-radius: 20px;
   justify-content: center;
   flex-flow: wrap;
+  transition: all 0.2s ease-out;
 }
 .cart-icon {
   display: flex;
@@ -28,4 +29,23 @@
 }
 .cart-number {
   display: flex;
+}
+
+.cart-container:hover{
+  background-color: #883131;
+  border-color: #883131;
+  transition: all 0.2s ease-out;
+}
+
+@media screen and (max-width:500px) {
+  .cart-text {
+    display: none;
+  }
+  .cart-container {
+ width: 5.5rem;
+ height: 3rem;
+  }
+  .cart-icon {
+    size: 50%;
+  }
 }

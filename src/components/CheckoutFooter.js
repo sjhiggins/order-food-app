@@ -22,19 +22,23 @@ const CheckoutFooter = (props) => {
 
   let totalPrice= totalPriceProduct(checkoutCartArray).toFixed(2)
 
+  const orderHandler = () => {
+    alert('Order Recieved!')
+  }
+
   return (
     <div className="checkout-footer-container">
-      <div className="footer-text-cost-container">
+      {<div className="footer-text-cost-container">
         <div className="footer-text">Total Amount:</div>
         <label className="footer-text cost">£{totalPrice}</label>
-      </div>
+      </div>}
       <div className="footer-buttons-container">
         <button onClick={clickHandler} className="footer-button">
           Close
         </button>
         { totalPrice > 0 
         && 
-        <button className="footer-button order">Order</button>
+        <button className="footer-button order" onClick={orderHandler}>Order</button>
         }
       </div>
     </div>
