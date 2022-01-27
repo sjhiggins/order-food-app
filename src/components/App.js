@@ -10,6 +10,7 @@ import Footer from "./Footer";
 function App() {
   const cartCtx = useContext(CheckoutContext);
   const checkoutCart = cartCtx.checkoutCart;
+  const fetchError = cartCtx.fetchError;
   const isCartClicked = cartCtx.isCartClicked;
   const isLoading = cartCtx.isLoading;
   return (
@@ -18,7 +19,7 @@ function App() {
       {isCartClicked ? <CheckoutOverlay checkoutCart={checkoutCart} /> : null}
       <HomeInfo />
       <FoodList checkoutCart={checkoutCart} />
-      {!isLoading && <Footer />}
+      {!isLoading && !fetchError && <Footer />}
       <Background />
     </div>
   );

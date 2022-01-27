@@ -7,6 +7,8 @@ const FoodList = (props) => {
   const cartCtx = useContext(CheckoutContext);
   const meatClicked = cartCtx.meatClicked;
   const vegClicked = cartCtx.vegClicked;
+  const fetchError = cartCtx.fetchError;
+  const setFetchError = cartCtx.setFetchError;
   const setIsLoading = cartCtx.setIsLoading;
   const isLoading = cartCtx.isLoading;
   const [originalFoodsArray, setOriginalFoodsArray] = useState([]);
@@ -14,11 +16,19 @@ const FoodList = (props) => {
   //----------------------------------------------fetching food data from firebase
   const fetchFoodHandler = async () => {
     setIsLoading(true);
-    const response = await fetch(
-      "https://httppractise1-default-rtdb.firebaseio.com/foodsArray.json"
-    );
-    const data = await response.json();
-    setOriginalFoodsArray(data);
+    try {
+      const response = await fetch(
+        "https://httppractise1-default-rtdb.firebaseio.com/foodsArray.json"
+      );
+
+      if (!response.ok) {
+        throw new Error("Something went wrong.");
+      }
+      const data = await response.json();
+      setOriginalFoodsArray(data);
+    } catch (error) {
+      setFetchError(error.message);
+    }
     setIsLoading(false);
   };
 
@@ -66,7 +76,9 @@ const FoodList = (props) => {
     vegOrMeatSign = <div></div>;
   }
 
-  return (
+  return fetchError ? (
+    <div className="foodlist-error">{fetchError}</div>
+  ) : (
     <div className="foodlist-container_outer">
       {isLoading ? (
         <div className="loading"></div>

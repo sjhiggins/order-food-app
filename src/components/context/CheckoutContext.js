@@ -12,6 +12,7 @@ export const CheckoutProvider = (props) => {
   const [meatClicked, setMeatClicked] = useState(true);
   const [vegClicked, setVegClicked] = useState(true);
   const [contactClicked, setContactClicked] = useState(false);
+  const [fetchError, setFetchError] = useState(null);
 
   const cartContext = {
     checkoutCart: checkoutCart,
@@ -32,6 +33,8 @@ export const CheckoutProvider = (props) => {
     setVegClicked: setVegClicked,
     contactClicked: contactClicked,
     setContactClicked: setContactClicked,
+    fetchError: fetchError,
+    setFetchError: setFetchError,
   };
 
   return (
