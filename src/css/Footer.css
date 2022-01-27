@@ -1,0 +1,34 @@
+.main-footer-container {
+  background-color: #202020;
+  height: 11rem;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+.main-footer-info {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  font-weight: 300;
+}
+.footer-clickable {
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+.footer-clickable-anchor {
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  text-decoration: none;
+}
+.footer-clickable-anchor:visited {
+  color: #ffffff;
+}
+.main-footer-copyright {
+  text-align: center;
+  padding: 4rem 4rem 2rem;
+  color: white;
+  font-weight: 300;
+  font-size: 0.75rem;
+}

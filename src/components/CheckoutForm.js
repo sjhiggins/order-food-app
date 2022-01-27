@@ -7,6 +7,8 @@ const CheckoutForm = () => {
   const checkoutCart = cartCtx.checkoutCart;
   const setIsOrderSubmitted = cartCtx.setIsOrderSubmitted;
   const setUserOrder = cartCtx.setUserOrder;
+
+  let userInfo = {};
   // -------------------------------------------------Loading state
   const [isLoading, setIsLoading] = useState(false);
   // ---------------------------------------------------state storing entered details
@@ -14,7 +16,7 @@ const CheckoutForm = () => {
   const [enteredNumber, setEnteredNumber] = useState("");
   const [enteredAddress, setEnteredAddress] = useState("");
   const [enteredPostcode, setEnteredPostcode] = useState("");
-  let userInfo = {};
+
   // ---------------------------------------------------state storing global form validation
   const [isFormValid, setIsFormValid] = useState(false);
   // ---------------------------------------------------state storing individual entry validation
@@ -107,10 +109,13 @@ const CheckoutForm = () => {
       if (!response.ok) {
         throw new Error("Something went wrong");
       }
-      const data = await response.json();
-      console.log(data.name);
 
-      setUserOrder(data);
+      const data = await response.json();
+      const uniqueID = data.name;
+
+      const dataCombined = { uniqueID: uniqueID, userInfo: userInfo };
+
+      setUserOrder(dataCombined);
 
       setIsLoading(false);
       setEnteredName("");

@@ -7,6 +7,7 @@ const CheckoutFooter = (props) => {
   const setIsOrderClicked = cartCtx.setIsOrderClicked;
   const isOrderClicked = cartCtx.isOrderClicked;
   const checkoutCartArray = props.checkoutCartArray;
+  const isOrderSubmitted = cartCtx.isOrderSubmitted;
 
   const clickHandler = () => {
     setIsCartClicked(false);
@@ -27,11 +28,13 @@ const CheckoutFooter = (props) => {
   const checkoutHandler = () => {
     setIsOrderClicked(true);
   };
+  //--------------------------------------------------------------------------changing text display depending on submission
+  let totalAmountText = !isOrderSubmitted ? "Total Amount:" : "Receipt:";
   return (
     <div className="checkout-footer-container">
       {
         <div className="footer-text-cost-container">
-          <div className="footer-text">Total Amount:</div>
+          <div className="footer-text">{totalAmountText}</div>
           <label className="footer-text cost">£{totalPrice}</label>
         </div>
       }

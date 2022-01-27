@@ -47,6 +47,10 @@
   width: 30px;
   margin: 7px;
 }
+.greyed-out {
+  color: rgb(255, 134, 134);
+  cursor: pointer;
+}
 
 .header-logo:hover {
   cursor: pointer;

@@ -1,7 +1,7 @@
 .receipt-container {
   /* background-color: rgba(0, 183, 255, 0.205); */
   position: relative;
-  bottom: 2rem;
+  bottom: 3rem;
   height: fit-content;
   font-size: 1rem;
 }
@@ -11,21 +11,39 @@
   flex-direction: column;
   padding: 0.5rem 0;
   border-radius: 8px;
-  /* background-color: rgb(204, 121, 121); */
+  /* background-color: rgba(204, 121, 121, 0.171); */
 }
 .receipt-writing {
   /* background-color: rgba(179, 223, 177, 0.664); */
   display: flex;
+  flex-direction: column;
   flex-grow: 6;
+  font-weight: 400;
 }
-.spacer {
-  display: flex;
-  /* background-color: black; */
+.receipt-message {
+  padding: 1rem 4rem 0 0;
+  min-width: 14rem;
+  font-weight: 400;
+}
+.receipt-message strong {
+  font-weight: 500;
+}
+.receipt-writing strong {
+  font-weight: 500;
+}
+.receipt-id {
+  color: #000000;
+  font-size: 1rem;
+}
+.receipt-order {
+  padding: 0.4rem 0;
+  overflow: auto;
+  max-height: 10rem;
 }
 .receipt-button-container {
   /* background-color: rgba(114, 88, 175, 0.226); */
   display: flex;
-  justify-content: end;
+  justify-content: space-between;
 }
 .receipt-button {
   width: 8rem;
@@ -43,6 +61,11 @@
   transition: all 0.2s ease-out;
   position: relative;
   top: 2rem;
+}
+.receipt-cooking-message {
+  position: relative;
+  top: 2.7rem;
+  font-size: 1.2rem;
 }
 
 .receipt-button:hover {

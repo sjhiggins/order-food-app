@@ -9,6 +9,9 @@ export const CheckoutProvider = (props) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isOrderSubmitted, setIsOrderSubmitted] = useState(false);
   const [userOrder, setUserOrder] = useState("hello");
+  const [meatClicked, setMeatClicked] = useState(true);
+  const [vegClicked, setVegClicked] = useState(true);
+  const [contactClicked, setContactClicked] = useState(false);
 
   const cartContext = {
     checkoutCart: checkoutCart,
@@ -23,6 +26,12 @@ export const CheckoutProvider = (props) => {
     setIsOrderSubmitted: setIsOrderSubmitted,
     userOrder: userOrder,
     setUserOrder: setUserOrder,
+    meatClicked: meatClicked,
+    setMeatClicked: setMeatClicked,
+    vegClicked: vegClicked,
+    setVegClicked: setVegClicked,
+    contactClicked: contactClicked,
+    setContactClicked: setContactClicked,
   };
 
   return (

@@ -5,9 +5,11 @@ import "../css/FoodList.css";
 
 const FoodList = (props) => {
   const cartCtx = useContext(CheckoutContext);
+  const meatClicked = cartCtx.meatClicked;
+  const vegClicked = cartCtx.vegClicked;
   const setIsLoading = cartCtx.setIsLoading;
   const isLoading = cartCtx.isLoading;
-  const [foodsArray, setFoodsArray] = useState([]);
+  const [originalFoodsArray, setOriginalFoodsArray] = useState([]);
 
   //----------------------------------------------fetching food data from firebase
   const fetchFoodHandler = async () => {
@@ -16,13 +18,29 @@ const FoodList = (props) => {
       "https://httppractise1-default-rtdb.firebaseio.com/foodsArray.json"
     );
     const data = await response.json();
-    setFoodsArray(data);
+    setOriginalFoodsArray(data);
     setIsLoading(false);
   };
 
   useEffect(() => {
     fetchFoodHandler();
   }, []);
+
+  console.log(originalFoodsArray);
+
+  //-------------------should also add a function that finds the index of meat/veg meals for dynamic slicing incase of changing menu
+
+  // -------------------------------------------------------filter by veg or meat
+
+  let filteredArray = originalFoodsArray;
+
+  if (meatClicked && vegClicked) {
+    filteredArray = originalFoodsArray;
+  } else if (meatClicked && !vegClicked) {
+    filteredArray = originalFoodsArray.slice(0, 5);
+  } else if (!meatClicked && vegClicked) {
+    filteredArray = originalFoodsArray.slice(5, 9);
+  }
 
   //-------------------------------------------function to map the individual food items
   const foodMapFunction = (object) => {
@@ -38,13 +56,26 @@ const FoodList = (props) => {
     );
   };
 
+  let vegOrMeatSign = <div></div>;
+
+  if (meatClicked && !vegClicked) {
+    vegOrMeatSign = <div className="foodlist-sign-meat">Just Meat</div>;
+  } else if (!meatClicked && vegClicked) {
+    vegOrMeatSign = <div className="foodlist-sign-veg">Just Veg</div>;
+  } else if (meatClicked && vegClicked) {
+    vegOrMeatSign = <div></div>;
+  }
+
   return (
     <div className="foodlist-container_outer">
       {isLoading ? (
         <div className="loading"></div>
       ) : (
-        <div className="foodlist-container">
-          {foodsArray.map(foodMapFunction)}
+        <div className="foodlist">
+          {vegOrMeatSign}
+          <div className="foodlist-container">
+            {filteredArray.map(foodMapFunction)}
+          </div>
         </div>
       )}
     </div>

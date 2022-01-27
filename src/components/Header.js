@@ -7,13 +7,59 @@ import { useState } from "react/cjs/react.development";
 const Header = () => {
   const cartCtx = useContext(CheckoutContext);
   const setIsCartClicked = cartCtx.setIsCartClicked;
+  const meatClicked = cartCtx.meatClicked;
+  const vegClicked = cartCtx.vegClicked;
+  const setMeatClicked = cartCtx.setMeatClicked;
+  const setVegClicked = cartCtx.setVegClicked;
+  const setContactClicked = cartCtx.setContactClicked;
   const [navShow, setNavShow] = useState(false);
   const [navClass, setNavClass] = useState("header-nav");
+  const [meatCSS, setMeatCSS] = useState("header-navlink");
+  const [vegCSS, setVegCSS] = useState("header-navlink");
 
+  // ---------------------------------------------header veg and meat filter logic
+  const meatClickHandler = () => {
+    if (meatClicked && vegClicked) {
+      setVegClicked(false);
+      setVegCSS("header-navlink greyed-out");
+    } else if (!meatClicked && vegClicked) {
+      setVegClicked(false);
+      setMeatClicked(true);
+      setMeatCSS("header-navlink");
+      setVegCSS("header-navlink greyed-out");
+    } else if (meatClicked && !vegClicked) {
+      setVegClicked(true);
+      setMeatClicked(true);
+      setMeatCSS("header-navlink");
+      setVegCSS("header-navlink");
+    }
+  };
+
+  const vegClickHandler = () => {
+    if (meatClicked && vegClicked) {
+      setMeatClicked(false);
+      setMeatCSS("header-navlink greyed-out");
+    } else if (meatClicked && !vegClicked) {
+      setVegClicked(true);
+      setMeatClicked(false);
+      setMeatCSS("header-navlink greyed-out");
+      setVegCSS("header-navlink");
+    } else if (!meatClicked && vegClicked) {
+      setVegClicked(true);
+      setMeatClicked(true);
+      setMeatCSS("header-navlink");
+      setVegCSS("header-navlink");
+    }
+  };
+
+  const contactClickHandler = () => {
+    setContactClicked(true);
+  };
+  // ---------------------------------------------header cart clicking logic
   const cartClickHandler = () => {
     setIsCartClicked(true);
   };
-
+  // --------------------------------------------- navbar logic
   const burgerClickHandler = () => {
     setNavShow(!navShow);
     navShow ? setNavClass("header-nav") : setNavClass("nav-active");
@@ -32,13 +78,19 @@ const Header = () => {
       <nav className={navClass}>
         <ul className="header-navlinks">
           <li>
-            <a className="header-navlink">Meat Meals</a>
+            <div className={meatCSS} onClick={meatClickHandler}>
+              Meat Meals
+            </div>
           </li>
           <li>
-            <a className="header-navlink">Veg Meals</a>
+            <div className={vegCSS} onClick={vegClickHandler}>
+              Veg Meals
+            </div>
           </li>
           <li>
-            <a className="header-navlink">Contact</a>
+            <div className="header-navlink" onClick={contactClickHandler}>
+              Contact
+            </div>
           </li>
         </ul>
       </nav>

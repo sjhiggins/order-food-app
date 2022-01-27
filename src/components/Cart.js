@@ -7,10 +7,9 @@ const Cart = () => {
   const cartCtx = useContext(CheckoutContext);
   const checkoutCart = Object.values(cartCtx.checkoutCart);
 
-  //  function to add up amounts in the array
+  //  a general function to add up amounts in an array
   const addFunction = (cart) => {
     let numberOfItems = 0;
-
     for (let i = 0; i < cart.length; i++) {
       numberOfItems = numberOfItems + cart[i].amount;
     }

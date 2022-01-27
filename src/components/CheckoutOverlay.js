@@ -15,9 +15,13 @@ const CheckoutOverlay = (props) => {
   const checkoutCartArray = Object.values(props.checkoutCart);
 
   const clickHandle = () => {
-    console.log("clicked");
-    setIsCartClicked(false);
-    setIsOrderClicked(false);
+    if (isOrderSubmitted) {
+      return;
+    } else {
+      console.log("clicked");
+      setIsCartClicked(false);
+      setIsOrderClicked(false);
+    }
   };
 
   const scrollHeightCSS = !isOrderClicked
@@ -27,25 +31,27 @@ const CheckoutOverlay = (props) => {
   return (
     <div className="ol-container_outer">
       <div className="ol-container ">
-        <div className={scrollHeightCSS}>
-          {checkoutCartArray.length === 0 ? (
-            <div className="add-order">
-              <h3>Please Add To Your Order!</h3>
-            </div>
-          ) : (
-            checkoutCartArray.map((object) => {
-              return object === 0 ? null : (
-                <CheckoutOverlayItem
-                  name={object.name}
-                  id={object.id}
-                  amount={object.amount}
-                  price={object.price}
-                  key={object.id}
-                />
-              );
-            })
-          )}
-        </div>
+        {!isOrderSubmitted && (
+          <div className={scrollHeightCSS}>
+            {checkoutCartArray.length === 0 ? (
+              <div className="add-order">
+                <h3>Please Add To Your Order!</h3>
+              </div>
+            ) : (
+              checkoutCartArray.map((object) => {
+                return object === 0 ? null : (
+                  <CheckoutOverlayItem
+                    name={object.name}
+                    id={object.id}
+                    amount={object.amount}
+                    price={object.price}
+                    key={object.id}
+                  />
+                );
+              })
+            )}
+          </div>
+        )}
         <CheckoutFooter checkoutCartArray={checkoutCartArray} />
         {isOrderClicked && !isOrderSubmitted && <CheckoutForm />}
         {isOrderSubmitted && <Receipt />}
