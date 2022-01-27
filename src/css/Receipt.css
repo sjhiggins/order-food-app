@@ -1,0 +1,55 @@
+.receipt-container {
+  /* background-color: rgba(0, 183, 255, 0.205); */
+  position: relative;
+  bottom: 2rem;
+  height: fit-content;
+  font-size: 1rem;
+}
+.receipt-writing-button-container {
+  display: flex;
+  height: fit-content;
+  flex-direction: column;
+  padding: 0.5rem 0;
+  border-radius: 8px;
+  /* background-color: rgb(204, 121, 121); */
+}
+.receipt-writing {
+  /* background-color: rgba(179, 223, 177, 0.664); */
+  display: flex;
+  flex-grow: 6;
+}
+.spacer {
+  display: flex;
+  /* background-color: black; */
+}
+.receipt-button-container {
+  /* background-color: rgba(114, 88, 175, 0.226); */
+  display: flex;
+  justify-content: end;
+}
+.receipt-button {
+  width: 8rem;
+  height: 3rem;
+  margin: 0.5rem 0 0 0.5rem;
+  border: solid;
+  border-width: 1px;
+  border-color: #e84545;
+  background-color: #e84545;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.26);
+  border-radius: 18px;
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 500;
+  transition: all 0.2s ease-out;
+  position: relative;
+  top: 2rem;
+}
+
+.receipt-button:hover {
+  background-color: #883131;
+  border-color: #883131;
+  transition: all 0.2s ease-out;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+}

@@ -17,3 +17,21 @@
   margin: 0 35px;
   border-radius: 15px;
 }
+.loading {
+  margin: 50px auto;
+  border: solid 8px #fefefe;
+  border-top: solid 8px #e84545;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  animation: loading 0.7s infinite linear;
+}
+
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

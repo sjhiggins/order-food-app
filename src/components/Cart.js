@@ -1,24 +1,23 @@
-import React,{useContext}from "react";
+import React, { useContext } from "react";
 import { FaShoppingCart } from "react-icons/fa";
 import { CheckoutContext } from "./context/CheckoutContext";
 import "../css/Cart.css";
 
 const Cart = () => {
   const cartCtx = useContext(CheckoutContext);
- const checkoutCart  = Object.values(cartCtx.checkoutCart)
+  const checkoutCart = Object.values(cartCtx.checkoutCart);
 
-//  function to add up amounts in the array
- const addFunction = (cart) => {
+  //  function to add up amounts in the array
+  const addFunction = (cart) => {
+    let numberOfItems = 0;
 
-   let numberOfItems = 0
+    for (let i = 0; i < cart.length; i++) {
+      numberOfItems = numberOfItems + cart[i].amount;
+    }
+    return numberOfItems;
+  };
 
-   for(let i=0 ; i<cart.length; i++){
-     numberOfItems = numberOfItems + cart[i].amount
-   }
-  return numberOfItems
- }
-
-  let numberOfItems = addFunction(checkoutCart)
+  let numberOfItems = addFunction(checkoutCart);
 
   return (
     <div className="cart-container">

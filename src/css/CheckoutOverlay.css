@@ -9,30 +9,40 @@
 .ol-container_outer {
   display: flex;
   position: fixed;
-
   justify-content: center;
   color: black;
   width: 100%;
+  height: 100%;
   z-index: 22;
 }
 .ol-container {
   display: flex;
+  position: relative;
+  bottom: 2.5rem;
   flex-direction: column;
-  top: 15rem;
+  /* top: 15rem; */
   background-color: #f5f5f5;
   box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.603);
   width: 38rem;
+  height: fit-content;
   min-width: 20rem;
   padding: 1rem 1.5rem;
-  margin: 8rem 35px;
+  /* margin: 3rem 35px; */
+  margin: auto 35px;
   border-radius: 15px;
   z-index: 23;
+  transition: all 1s;
 }
-.ol-container-scroll{
+
+.ol-container-scroll {
   overflow: auto;
-  max-height: 25rem;
+  max-height: 12rem;
 }
-.add-order{
+.ol-container-scroll-clicked {
+  overflow: auto;
+  max-height: 18rem;
+}
+.add-order {
   text-align: center;
   font-size: 15px;
   height: 45px;

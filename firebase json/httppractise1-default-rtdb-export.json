@@ -1,0 +1,52 @@
+{
+  "foodsArray" : [ {
+    "description" : "The finest salmon and peagreens, sourced from the pine alps of South East Asia.",
+    "id" : 0,
+    "key" : 0,
+    "name" : "Sushi",
+    "price" : 22.99,
+    "type" : "meat"
+  }, {
+    "description" : "Italian-American cured dry sausage, with spicy war torn salamis from southern Italy.",
+    "id" : 1,
+    "key" : 1,
+    "name" : "Pepperoni Pizza",
+    "price" : 15.99,
+    "type" : "meat"
+  }, {
+    "description" : "Crispy buttermilk thigh, shredded pickled lettuce with our brand new onionaise and a pound of cheese. ",
+    "id" : 2,
+    "key" : 2,
+    "name" : "Saucy Chicken Burger",
+    "price" : 12.5,
+    "type" : "meat"
+  }, {
+    "description" : "Double steak patty, double american cheese, signiture Muhammed Ali sauce with half a gherkin & a boiled onion.",
+    "id" : 3,
+    "key" : 3,
+    "name" : "Dirty Cheese Burger",
+    "price" : 14.5,
+    "type" : "meat"
+  }, {
+    "description" : "Barbecue chicken pizza on made from scratch dough topped with barbecue sauce, chopped chicken, onions, and tons of cheese. Our family's favorite pizza!",
+    "id" : 4,
+    "key" : 4,
+    "name" : "Spicy Barbecue Chicken Pizza",
+    "price" : 16.99,
+    "type" : "meat"
+  }, {
+    "description" : "White bread with three slices of our in house grown iceberg lettuce.",
+    "id" : 5,
+    "key" : 5,
+    "name" : "Lettuce Burger",
+    "price" : 26.99,
+    "type" : "veg"
+  }, {
+    "description" : "A bowl of the worlds greenest and most popular broccoli, the English broccoli.",
+    "id" : 6,
+    "key" : 6,
+    "name" : "Bowl of Broccoli",
+    "price" : 16.99,
+    "type" : "veg"
+  } ]
+}

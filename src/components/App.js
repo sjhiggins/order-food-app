@@ -8,21 +8,14 @@ import { CheckoutContext } from "./context/CheckoutContext";
 
 function App() {
   const cartCtx = useContext(CheckoutContext);
-  const checkoutCart = cartCtx.checkoutCart
-  const isCartClicked = cartCtx.isCartClicked
-
-  console.log(checkoutCart)
+  const checkoutCart = cartCtx.checkoutCart;
+  const isCartClicked = cartCtx.isCartClicked;
   return (
     <div>
       <Header />
-      {isCartClicked ? (
-        <CheckoutOverlay
-          checkoutCart={checkoutCart}
-        />
-      ) : null}
+      {isCartClicked ? <CheckoutOverlay checkoutCart={checkoutCart} /> : null}
       <HomeInfo />
-      <FoodList checkoutCart={checkoutCart}
-      />
+      <FoodList checkoutCart={checkoutCart} />
       <Background />
     </div>
   );

@@ -37,9 +37,10 @@
   font-weight: 500;
   transition: all 0.2s ease-out;
 }
-.footer-button.order {
+.footer-button.order-checkout {
   background-color: #e84545;
   color: white;
+  width: 5.7rem;
   font-weight: 500;
 }
 

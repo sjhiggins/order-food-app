@@ -114,12 +114,12 @@
     transition: 0.2s ease-out;
   }
   .header-navlinks {
-    padding-top: 2rem; 
+    padding-top: 2rem;
     height: 17rem;
-}
+  }
 }
 @media screen and (max-width: 500px) {
   .header-logo {
- font-size: 14px;
+    font-size: 14px;
   }
 }
